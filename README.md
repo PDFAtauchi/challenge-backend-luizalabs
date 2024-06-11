@@ -11,6 +11,9 @@
     ```
 - For Development
     - install python >= 3.8 (for pre-commit checkers)
+    - python -m pip install pre-commit
+    - pre-commit install
+    - pre-commit install --hook-type commit-msg
 
 ## Format Code Style
 To check code style
