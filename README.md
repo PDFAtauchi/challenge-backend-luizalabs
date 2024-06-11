@@ -7,3 +7,7 @@ To check code style
 
 To apply code style suggestions
 - ./gradlew spotlessApply
+
+## Testing Metrics
+To run mutation tests
+- ./gradlew pitest
