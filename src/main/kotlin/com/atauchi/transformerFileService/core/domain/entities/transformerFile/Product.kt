@@ -5,5 +5,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Product(
     val product_id: Int,
-    val value: Double,
+    val value: String,
 )

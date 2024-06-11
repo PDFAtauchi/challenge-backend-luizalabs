@@ -8,7 +8,7 @@ class ProductTests {
     fun `should verify the store of Product information`() {
         // Given
         val productId: Int = 1
-        val value: Double = 100.99
+        val value: String = "100.99"
 
         // When
         val product: Product = Product(product_id = productId, value = value)
