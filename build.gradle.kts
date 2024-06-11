@@ -44,6 +44,24 @@ kotlin {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+    testLogging {
+        events("PASSED", "FAILED", "SKIPPED")
+        showStandardStreams = true
+        exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+    }
+}
+
+pitest {
+    setProperty("junit5PluginVersion", "1.2.1")
+    setProperty("pitestVersion", "1.15.2")
+    setProperty("testPlugin", "junit5")
+    setProperty("targetClasses", listOf("com.atauchi.transformerFileService.*"))
+    setProperty("outputFormats", listOf("XML", "HTML"))
+    setProperty("mutators", listOf("STRONGER"))
+    setProperty("threads", Runtime.getRuntime().availableProcessors())
+    setProperty("avoidCallsTo", listOf("kotlin.jvm.internal"))
+    setProperty("mutationThreshold", 75)
+    setProperty("coverageThreshold", 60)
 }
 
 spotless {
