@@ -45,3 +45,15 @@ kotlin {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+spotless {
+	kotlin {
+		target("src/**/*.kt")
+		ktlint("1.2.1")
+	}
+
+	kotlinGradle {
+		target("*.gradle.kts")
+		ktlint("1.2.1")
+	}
+}
