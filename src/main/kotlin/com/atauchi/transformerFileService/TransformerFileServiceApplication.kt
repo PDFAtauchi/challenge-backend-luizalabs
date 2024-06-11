@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class TransformerFileServiceApplication
 
 fun main(args: Array<String>) {
-	runApplication<TransformerFileServiceApplication>(*args)
+    runApplication<TransformerFileServiceApplication>(*args)
 }
