@@ -1,0 +1,25 @@
+default_stages: [commit]
+repos:
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v1.17.0
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
+
+  - repo: local
+    hooks:
+      - id: clean and build
+        name: clean and build
+        entry: bash -c "./gradlew clean assemble"
+        language: system
+        require_serial: true
+      - id: code formatter
+        name: code formatter
+        entry: bash -c "./gradlew spotlessCheck"
+        language: system
+        require_serial: true
+      - id: execution tests
+        name: execution tests
+        entry: bash -c "./gradlew pitest"
+        language: system
+        require_serial: true
