@@ -1,5 +1,17 @@
 # Transformer File Service
 
+# Pre-requisites to run project
+- General
+  - install docker and docker-compose
+- For Production
+  - create .env file
+     ```
+    ROOT_LOGGER_LEVEL=INFO
+    APPLICATION_LOGGER_LEVEL=INFO
+    ```
+- For Development
+    - install python >= 3.8 (for pre-commit checkers)
+
 ## Format Code Style
 To check code style
 - ./gradlew spotlessCheck
