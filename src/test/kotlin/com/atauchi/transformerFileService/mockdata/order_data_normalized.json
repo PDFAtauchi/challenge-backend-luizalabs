@@ -1,0 +1,68 @@
+[
+  {
+    "user_id": 3,
+    "name": "abc. Elaphem Trantow",
+    "orders": [
+      {
+        "order_id": 121,
+        "date": "2021-11-27",
+        "total": "1388.77",
+        "products": [
+          {
+            "product_id": 6,
+            "value": "100.00"
+          },
+          {
+            "product_id": 6,
+            "value": "1288.77"
+          }
+        ]
+      },
+      {
+        "order_id": 125,
+        "date": "2021-11-27",
+        "total": "961.37",
+        "products": [
+          {
+            "product_id": 7,
+            "value": "961.37"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "user_id": 1,
+    "name": "Masmer Prosacco",
+    "orders": [
+      {
+        "order_id": 234,
+        "date": "2021-03-08",
+        "total": "1836.74",
+        "products": [
+          {
+            "product_id": 3,
+            "value": "1836.74"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "user_id": 2,
+    "name": "Babbie Botz",
+    "orders": [
+      {
+        "order_id": 123,
+        "date": "2021-11-16",
+        "total": "1578.57",
+        "products": [
+          {
+            "product_id": 2,
+            "value": "1578.57"
+          }
+        ]
+      }
+    ]
+  }
+]

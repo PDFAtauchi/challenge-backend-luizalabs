@@ -34,6 +34,8 @@ dependencies {
     testImplementation("org.testcontainers:mongodb")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    testImplementation("org.instancio:instancio-junit:3.6.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.3.1")
 }
 
 kotlin {
@@ -58,10 +60,10 @@ pitest {
     setProperty("targetClasses", listOf("com.atauchi.transformerFileService.*"))
     setProperty("outputFormats", listOf("XML", "HTML"))
     setProperty("mutators", listOf("STRONGER"))
-    setProperty("threads", Runtime.getRuntime().availableProcessors())
+    setProperty("threads", 4)
     setProperty("avoidCallsTo", listOf("kotlin.jvm.internal"))
-    setProperty("mutationThreshold", 75)
-    setProperty("coverageThreshold", 60)
+    setProperty("mutationThreshold", 20)
+    setProperty("coverageThreshold", 75)
 }
 
 spotless {

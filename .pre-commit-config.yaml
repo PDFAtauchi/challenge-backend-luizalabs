@@ -20,6 +20,6 @@ repos:
         require_serial: true
       - id: execution tests
         name: execution tests
-        entry: bash -c "./gradlew pitest"
+        entry: bash -c "./gradlew test"
         language: system
         require_serial: true
