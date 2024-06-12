@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile
 
 @RestController
 @RequestMapping(TransformerFileConstants.BASE_URL)
-class TransformerFileController { // NO PITEST
+class TransformerFileController {
     @Autowired
     private lateinit var transformerFileService: TransformerFileService
 
