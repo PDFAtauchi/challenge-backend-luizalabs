@@ -136,3 +136,8 @@ http://localhost:8080
 |--------|-----------------------------------|----------------------------------------------------------|---------------------------------------------------------|-----------------|-----------------------------------------|
 | GET    | /api/v1/orders/search?orderId=836 | will search and return the list of orders in JSON format |      | 200 OK          | Lista de Orders filtered by the filters |
 
+
+## Pendings and Improvements 
+- Implementation of Cors (to care of security)
+- For scale requirement for the services, explore reactive programming (coroutines, weflux) as first step
+- To have scale and fault tolerance explore message queue (RabbitMQ, Kafka)
