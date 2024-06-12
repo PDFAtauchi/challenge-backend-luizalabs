@@ -1,4 +1,4 @@
-package com.atauchi.transformerFileService.core.application
+package com.atauchi.transformerFileService.core.application.transformerFile
 
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.File
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.User

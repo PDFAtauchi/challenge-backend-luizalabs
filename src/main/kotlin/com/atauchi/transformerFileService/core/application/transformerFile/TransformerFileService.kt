@@ -1,10 +1,10 @@
-package com.atauchi.transformerFileService.core.application
+package com.atauchi.transformerFileService.core.application.transformerFile
 
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.File
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.User
 import com.atauchi.transformerFileService.core.domain.exceptions.file.FileException
 import com.atauchi.transformerFileService.core.domain.exceptions.file.ParseFileException
-import com.atauchi.transformerFileService.core.domain.useCases.TransformerFileSaveUseCase
+import com.atauchi.transformerFileService.core.domain.useCases.transformerFile.TransformerFileSaveUseCase
 import com.atauchi.transformerFileService.infra.db.mongo.FileDocument
 import com.atauchi.transformerFileService.infra.db.mongo.TransformerFileRepository
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper

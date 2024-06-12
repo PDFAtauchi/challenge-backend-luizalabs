@@ -1,6 +1,6 @@
 package com.atauchi.transformerFileService.adapters.controllers
 
-import com.atauchi.transformerFileService.core.application.TransformerFileService
+import com.atauchi.transformerFileService.core.application.transformerFile.TransformerFileService
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.User
 import com.atauchi.transformerFileService.core.domain.exceptions.file.FileException
 import com.atauchi.transformerFileService.core.domain.exceptions.file.ParseFileException
@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile
 
 @RestController
 @RequestMapping(TransformerFileConstants.BASE_URL)
-class TransformerFileController { // NO PITEST
+class TransformerFileController {
     @Autowired
     private lateinit var transformerFileService: TransformerFileService
 

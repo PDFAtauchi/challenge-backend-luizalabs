@@ -1,7 +1,7 @@
 package com.atauchi.transformerFileService.core.domain.entities.transformerFile
 
 import com.atauchi.transformerFileService.core.domain.exceptions.file.FileException
-import com.atauchi.transformerFileService.core.domain.useCases.FileParser
+import com.atauchi.transformerFileService.core.domain.useCases.transformerFile.FileParser
 import org.springframework.web.multipart.MultipartFile
 import java.security.MessageDigest
 

@@ -7,6 +7,28 @@ It also provides storage for the normalized data files, enabling easy querying o
 orders using various filters.
 </center>
 
+
+### Stack
+the stack of tools, programming languages and others was based on the requirement 
+for the position.
+
+- Sprint Boot (Kotlin)
+- MongoDB
+- Mockito
+- Junit
+- Pitest
+- TestContainer
+- Spotless (code style formatter)
+- docker and docker-compose
+- Github Actions for the CI pipeline
+- Pre-commit to validate code by checkers before commit
+
+### Architecture and Approaches
+The project is based on the Clean Architecture, SOLID principles, Dependency injection and Clean code. 
+This architecture help to have a mantainable, scalable, decoupled and testable code.
+
+For more details about the problem and high level solution [Design](https://www.tldraw.com/ro/4AF9JKyHnt5cA6RQ1dtZA?v=-206,-42,2211,1068&p=page)
+
 # Pre-requisites to run project
 - General
   - install docker and docker-compose
@@ -103,3 +125,20 @@ http://localhost:8080
 |--------|----------------------------------------------|------------------------------------------------------------------------------------------|---------------------------------------------------------|-----------------|-----------------------------------------------------------------------------------|
 | POST   | /api/v1/files/transform | Transform a valid order data file in txt format in a normalized data file in JSON format | format form-data, key=word "file", value=data file      | 201 Created     | Order data file in JSON format                                                    |
 | POST   | /api/v1/files/transform | Return a message error when invalid data is trying to transformer                        | format form-data, key=word "file", value=json data file | 404 Bad Request | {"message": "Invalid file type, it needs to be .txt type"}                        |
+
+
+### API to search orders in the normalized data. It can be filter by orderId and/or startDate and/or endDate
+Base url
+```
+http://localhost:8080
+```
+
+| Method | Endpoint                          | Description                                              | Request Body                                            | Response Status | Response Body                           |
+|--------|-----------------------------------|----------------------------------------------------------|---------------------------------------------------------|-----------------|-----------------------------------------|
+| GET    | /api/v1/orders/search?orderId=836 | will search and return the list of orders in JSON format |      | 200 OK          | Lista de Orders filtered by the filters |
+
+
+## Pendings and Improvements 
+- Implementation of Cors (to care of security)
+- For scale requirement for the services, explore reactive programming (coroutines, weflux) as first step
+- To have scale and fault tolerance explore message queue (RabbitMQ, Kafka)

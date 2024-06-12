@@ -1,9 +1,7 @@
 package com.atauchi.transformerFileService.adapters.controllers
 
-import com.atauchi.transformerFileService.core.application.TransformerFileService
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.User
 import com.atauchi.transformerFileService.utilities.constants.TransformerFileConstants
-import com.atauchi.transformerFileService.utilities.constants.UuidGenerator
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
 import org.instancio.Instancio
@@ -11,13 +9,11 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
-import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.http.MediaType
 import org.springframework.mock.web.MockMultipartFile
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.ResultActions
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 import java.io.File
 import kotlin.test.assertEquals
@@ -26,12 +22,6 @@ import kotlin.test.assertEquals
 class TransformerFileControllerTests : BaseIntegrationTest() {
     @Autowired
     private lateinit var mockMvc: MockMvc
-
-    @MockBean
-    private lateinit var uuidGenerator: UuidGenerator
-
-    @Autowired
-    private lateinit var transformerFileService: TransformerFileService
 
     @Autowired
     private lateinit var objectMapper: ObjectMapper
@@ -88,7 +78,6 @@ class TransformerFileControllerTests : BaseIntegrationTest() {
     @Test
     @Throws(Exception::class)
     fun `should return error when file contains error in data`() {
-        // Given
         // Given
         val path = "src/test/kotlin/com/atauchi/transformerFileService/mockdata/wrong_order_data.txt"
         val fileContent = File(path).readBytes()
