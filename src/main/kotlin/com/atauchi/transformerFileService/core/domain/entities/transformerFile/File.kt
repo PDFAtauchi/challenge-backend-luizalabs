@@ -1,9 +1,6 @@
 package com.atauchi.transformerFileService.core.domain.entities.transformerFile
 
-import com.atauchi.transformerFileService.core.domain.exceptions.file.FileChecksumOperationException
-import com.atauchi.transformerFileService.core.domain.exceptions.file.FileEmptyException
-import com.atauchi.transformerFileService.core.domain.exceptions.file.FileSizeException
-import com.atauchi.transformerFileService.core.domain.exceptions.file.FileTypeException
+import com.atauchi.transformerFileService.core.domain.exceptions.file.FileException
 import com.atauchi.transformerFileService.core.domain.useCases.FileParser
 import org.springframework.web.multipart.MultipartFile
 import java.security.MessageDigest
@@ -18,15 +15,15 @@ class File(
 
     init {
         if (!isValidFileType()) {
-            throw FileTypeException("Invalid file type, it needs to be .txt type")
+            throw FileException("Invalid file type, it needs to be .txt type")
         }
 
         if (isEmpty()) {
-            throw FileEmptyException("Invalid empty file, it can not be empty")
+            throw FileException("Invalid empty file, it can not be empty")
         }
 
         if (getSize() > MAX_FILE_SIZE) {
-            throw FileSizeException("File can not exceeds 5MB")
+            throw FileException("File can not exceeds 5MB")
         }
     }
 
@@ -49,7 +46,7 @@ class File(
             val hash = digest.digest(bytes)
             return hash.joinToString("") { "%02x".format(it) }
         } catch (e: Exception) {
-            throw FileChecksumOperationException("Error getting the checksum of the file")
+            throw FileException("Error getting the checksum of the file")
         }
     }
 

@@ -47,9 +47,11 @@ class TxtFileParser : FileParser {
                 }
             }
         } catch (e: IOException) {
-            throw ParseFileException("Error reading file")
+            throw ParseFileException("Error reading file data")
+        } catch (e: NumberFormatException) {
+            throw ParseFileException("Some data is text when need to be number")
         } catch (e: Exception) {
-            throw Exception("Error parsing file data")
+            throw ParseFileException("Error in the server when parsing file data")
         } finally {
             br?.close()
         }

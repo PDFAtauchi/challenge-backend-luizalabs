@@ -2,10 +2,7 @@ package com.atauchi.transformerFileService.core.application
 
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.File
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.User
-import com.atauchi.transformerFileService.core.domain.exceptions.file.FileChecksumOperationException
-import com.atauchi.transformerFileService.core.domain.exceptions.file.FileEmptyException
-import com.atauchi.transformerFileService.core.domain.exceptions.file.FileSizeException
-import com.atauchi.transformerFileService.core.domain.exceptions.file.FileTypeException
+import com.atauchi.transformerFileService.core.domain.exceptions.file.FileException
 import com.atauchi.transformerFileService.core.domain.exceptions.file.ParseFileException
 import com.atauchi.transformerFileService.core.domain.useCases.TransformerFileSaveUseCase
 import com.atauchi.transformerFileService.infra.db.mongo.FileDocument
@@ -32,16 +29,10 @@ class TransformerFileService : TransformerFileSaveUseCase {
 
             users = saveFileInDB(file)
             return users
-        } catch (e: FileTypeException) {
-            throw Exception("${e.message}")
-        } catch (e: FileSizeException) {
-            throw Exception("${e.message}")
-        } catch (e: FileEmptyException) {
-            throw Exception("${e.message}")
+        } catch (e: FileException) {
+            throw FileException("${e.message}")
         } catch (e: ParseFileException) {
-            throw Exception("${e.message}")
-        } catch (e: FileChecksumOperationException) {
-            throw Exception("${e.message}")
+            throw ParseFileException("${e.message}")
         } catch (e: Exception) {
             throw Exception("${e.message}")
         }

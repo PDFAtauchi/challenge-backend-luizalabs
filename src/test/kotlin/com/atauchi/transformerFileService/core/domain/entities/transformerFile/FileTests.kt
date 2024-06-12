@@ -1,9 +1,6 @@
 package com.atauchi.transformerFileService.core.domain.entities.transformerFile
 
-import com.atauchi.transformerFileService.core.domain.exceptions.file.FileChecksumOperationException
-import com.atauchi.transformerFileService.core.domain.exceptions.file.FileEmptyException
-import com.atauchi.transformerFileService.core.domain.exceptions.file.FileSizeException
-import com.atauchi.transformerFileService.core.domain.exceptions.file.FileTypeException
+import com.atauchi.transformerFileService.core.domain.exceptions.file.FileException
 import com.atauchi.transformerFileService.core.domain.exceptions.file.ParseFileException
 import com.atauchi.transformerFileService.core.domain.useCases.FileParser
 import org.assertj.core.api.Assertions.assertThatThrownBy
@@ -52,7 +49,7 @@ class FileTests {
             // When and Then
             assertThatThrownBy {
                 File(file, fileParser)
-            }.isInstanceOf(FileTypeException::class.java)
+            }.isInstanceOf(FileException::class.java)
         }
     }
 
@@ -82,7 +79,7 @@ class FileTests {
             // When and Then
             assertThatThrownBy {
                 File(file, fileParser)
-            }.isInstanceOf(FileEmptyException::class.java)
+            }.isInstanceOf(FileException::class.java)
         }
     }
 
@@ -114,7 +111,7 @@ class FileTests {
             // When and Then
             assertThatThrownBy {
                 File(file, fileParser)
-            }.isInstanceOf(FileSizeException::class.java)
+            }.isInstanceOf(FileException::class.java)
         }
     }
 
@@ -149,12 +146,12 @@ class FileTests {
             val myfile = File(file, fileParser)
 
             val spyFile = spy(myfile)
-            doThrow(FileChecksumOperationException("abc")).`when`(spyFile).getChecksum()
+            doThrow(FileException("abc")).`when`(spyFile).getChecksum()
 
             // When and Then
             assertThatThrownBy {
                 spyFile.getChecksum()
-            }.isInstanceOf(FileChecksumOperationException::class.java)
+            }.isInstanceOf(FileException::class.java)
         }
     }
 

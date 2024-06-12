@@ -12,7 +12,7 @@ import org.springframework.test.web.servlet.ResultActions
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
-@WebMvcTest
+@WebMvcTest(HealthCheckController::class)
 class HealthCheckControllerTests {
     @MockBean
     private lateinit var uuidGenerator: UuidGenerator
