@@ -5,11 +5,13 @@ import com.atauchi.transformerFileService.core.domain.entities.transformerFile.P
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.User
 import com.atauchi.transformerFileService.core.domain.exceptions.file.ParseFileException
 import com.atauchi.transformerFileService.core.domain.useCases.FileParser
+import org.springframework.stereotype.Component
 import org.springframework.web.multipart.MultipartFile
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 
+@Component
 class TxtFileParser : FileParser {
     override fun parse(file: MultipartFile): List<User> {
         var br: BufferedReader? = null

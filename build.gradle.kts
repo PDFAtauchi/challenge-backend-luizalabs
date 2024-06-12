@@ -35,6 +35,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
     testImplementation("org.instancio:instancio-junit:3.6.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.3.1")
 }
 
 kotlin {

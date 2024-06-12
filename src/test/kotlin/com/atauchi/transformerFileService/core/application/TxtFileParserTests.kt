@@ -14,6 +14,7 @@ import kotlin.test.assertEquals
 
 class TxtFileParserTests {
     private lateinit var file: MultipartFile
+
     private lateinit var txtFileParser: FileParser
 
     @BeforeEach
