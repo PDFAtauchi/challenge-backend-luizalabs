@@ -103,3 +103,14 @@ http://localhost:8080
 |--------|----------------------------------------------|------------------------------------------------------------------------------------------|---------------------------------------------------------|-----------------|-----------------------------------------------------------------------------------|
 | POST   | /api/v1/files/transform | Transform a valid order data file in txt format in a normalized data file in JSON format | format form-data, key=word "file", value=data file      | 201 Created     | Order data file in JSON format                                                    |
 | POST   | /api/v1/files/transform | Return a message error when invalid data is trying to transformer                        | format form-data, key=word "file", value=json data file | 404 Bad Request | {"message": "Invalid file type, it needs to be .txt type"}                        |
+
+
+### API to search orders in the normalized data. It can be filter by orderId and/or startDate and/or endDate
+Base url
+```
+http://localhost:8080
+```
+
+| Method | Endpoint                          | Description                                              | Request Body                                            | Response Status | Response Body                           |
+|--------|-----------------------------------|----------------------------------------------------------|---------------------------------------------------------|-----------------|-----------------------------------------|
+| GET    | /api/v1/orders/search?orderId=836 | will search and return the list of orders in JSON format |      | 200 OK          | Lista de Orders filtered by the filters |
