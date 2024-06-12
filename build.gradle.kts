@@ -55,12 +55,12 @@ tasks.withType<Test> {
 
 pitest {
     setProperty("junit5PluginVersion", "1.2.1")
-    setProperty("pitestVersion", "1.15.0")
+    setProperty("pitestVersion", "1.15.2")
     setProperty("testPlugin", "junit5")
     setProperty("targetClasses", listOf("com.atauchi.transformerFileService.*"))
     setProperty("outputFormats", listOf("XML", "HTML"))
     setProperty("mutators", listOf("STRONGER"))
-    setProperty("threads", Runtime.getRuntime().availableProcessors())
+    setProperty("threads", 4)
     setProperty("avoidCallsTo", listOf("kotlin.jvm.internal"))
     setProperty("mutationThreshold", 20)
     setProperty("coverageThreshold", 75)
