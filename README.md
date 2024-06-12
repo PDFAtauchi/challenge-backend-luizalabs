@@ -20,7 +20,8 @@ for the position.
 - TestContainer
 - Spotless (code style formatter)
 - docker and docker-compose
-
+- Github Actions for the CI pipeline
+- Pre-commit to validate code by checkers before commit
 
 ### Architecture and Approaches
 The project is based on the Clean Architecture, SOLID principles, Dependency injection and Clean code. 
