@@ -1,6 +1,6 @@
 package com.atauchi.transformerFileService.adapters.controllers
 
-import com.atauchi.transformerFileService.core.application.TransformerFileService
+import com.atauchi.transformerFileService.core.application.transformerFile.TransformerFileService
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.User
 import com.atauchi.transformerFileService.utilities.constants.TransformerFileConstants
 import com.atauchi.transformerFileService.utilities.constants.UuidGenerator
@@ -17,7 +17,6 @@ import org.springframework.mock.web.MockMultipartFile
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.ResultActions
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 import java.io.File
 import kotlin.test.assertEquals

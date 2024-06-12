@@ -1,10 +1,10 @@
-package com.atauchi.transformerFileService.core.application
+package com.atauchi.transformerFileService.core.application.transformerFile
 
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.Order
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.Product
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.User
 import com.atauchi.transformerFileService.core.domain.exceptions.file.ParseFileException
-import com.atauchi.transformerFileService.core.domain.useCases.FileParser
+import com.atauchi.transformerFileService.core.domain.useCases.transformerFile.FileParser
 import org.springframework.stereotype.Component
 import org.springframework.web.multipart.MultipartFile
 import java.io.BufferedReader

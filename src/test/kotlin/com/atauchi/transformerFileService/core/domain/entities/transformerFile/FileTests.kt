@@ -2,7 +2,7 @@ package com.atauchi.transformerFileService.core.domain.entities.transformerFile
 
 import com.atauchi.transformerFileService.core.domain.exceptions.file.FileException
 import com.atauchi.transformerFileService.core.domain.exceptions.file.ParseFileException
-import com.atauchi.transformerFileService.core.domain.useCases.FileParser
+import com.atauchi.transformerFileService.core.domain.useCases.transformerFile.FileParser
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Nested

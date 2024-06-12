@@ -1,5 +1,7 @@
 package com.atauchi.transformerFileService.core.application
 
+import com.atauchi.transformerFileService.core.application.transformerFile.TransformerFileService
+import com.atauchi.transformerFileService.core.application.transformerFile.TxtFileParser
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.File
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.User
 import com.atauchi.transformerFileService.infra.db.mongo.FileDocument

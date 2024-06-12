@@ -1,6 +1,6 @@
 package com.atauchi.transformerFileService.adapters.controllers
 
-import com.atauchi.transformerFileService.core.application.TransformerFileService
+import com.atauchi.transformerFileService.core.application.transformerFile.TransformerFileService
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.User
 import com.atauchi.transformerFileService.core.domain.exceptions.file.FileException
 import com.atauchi.transformerFileService.core.domain.exceptions.file.ParseFileException

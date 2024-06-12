@@ -1,9 +1,10 @@
 package com.atauchi.transformerFileService.core.application
 
+import com.atauchi.transformerFileService.core.application.transformerFile.TxtFileParser
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.Order
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.Product
 import com.atauchi.transformerFileService.core.domain.entities.transformerFile.User
-import com.atauchi.transformerFileService.core.domain.useCases.FileParser
+import com.atauchi.transformerFileService.core.domain.useCases.transformerFile.FileParser
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
