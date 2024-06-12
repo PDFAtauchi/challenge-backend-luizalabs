@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  mongo_db:
+    image: mongo:latest
+    container_name: mongo_container
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodata:/data/db
+
+  app:
+    build: .
+    container_name: app_container
+    restart: on-failure
+    env_file: .env
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://${MONGO_USER}:${MONGO_PASS}@${MONGO_HOST}:${MONGO_PORT}/${MONGO_DB}?authSource=${MONGO_AUTH_SOURCE}
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo_db
+
+volumes:
+  mongodata:
