@@ -7,6 +7,27 @@ It also provides storage for the normalized data files, enabling easy querying o
 orders using various filters.
 </center>
 
+
+### Stack
+the stack of tools, programming languages and others was based on the requirement 
+for the position.
+
+- Sprint Boot (Kotlin)
+- MongoDB
+- Mockito
+- Junit
+- Pitest
+- TestContainer
+- Spotless (code style formatter)
+- docker and docker-compose
+
+
+### Architecture and Approaches
+The project is based on the Clean Architecture, SOLID principles, Dependency injection and Clean code. 
+This architecture help to have a mantainable, scalable, decoupled and testable code.
+
+For more details about the problem and high level solution [Design](https://www.tldraw.com/ro/4AF9JKyHnt5cA6RQ1dtZA?v=-206,-42,2211,1068&p=page)
+
 # Pre-requisites to run project
 - General
   - install docker and docker-compose
@@ -114,3 +135,4 @@ http://localhost:8080
 | Method | Endpoint                          | Description                                              | Request Body                                            | Response Status | Response Body                           |
 |--------|-----------------------------------|----------------------------------------------------------|---------------------------------------------------------|-----------------|-----------------------------------------|
 | GET    | /api/v1/orders/search?orderId=836 | will search and return the list of orders in JSON format |      | 200 OK          | Lista de Orders filtered by the filters |
+
